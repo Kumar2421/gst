@@ -1,0 +1,299 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html {
+  position: relative;
+  inset: 0;
+  overflow: hidden;
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+body {
+  /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,22,131,1) 0%, rgb(63, 84, 102) 90% ); */
+    background-color: #fff3f3;
+    
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(174, 160, 138, 0.52) 0%, rgba(174, 160, 138, 0.52) 38.6%, rgba(174, 160, 138, 0.52) 72.1%, rgba(211,177,125,0.24) 94.7% );
+    position: relative;z-index: -1000;
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    justify-content: center;
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+  }
+  #login-container{
+    border-radius: 20%;
+    background-size: cover;
+   padding-left: 12%;
+  }
+  #first-outer{
+  position: relative;
+  margin-top: -50px;
+  height: 45em;
+  /* background-size: cover;
+ background-image: url(media/pexels-designecologist-1008693.jpg); */
+ /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(100,43,115,1) 0%, rgba(4,0,4,1) 90% ); */
+  }
+  
+  .welcome-head{
+    /* background: linear-gradient(to right, #afba39, #c4613a, #b63f04);
+    -webkit-text-fill-color: transparent;
+    background-clip: text; */
+    color: #000000b8;
+    letter-spacing: 5px;
+    margin-top: 3em !important;
+    margin-left: 0.5em;
+    transform: translate(10%,-50%);
+    text-transform:uppercase;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 4.7em;
+   font-weight: 700;
+   
+  }
+  .welcome-span{
+    font-family:fantasy;
+    letter-spacing: 5px;
+    font-style:italic;
+    text-transform: capitalize;
+    color:rgb(0, 0, 0);
+    font-weight: lighter;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 0.8em;
+  }
+  
+  .container .form form .forget-pass{
+    margin: -15px 0 15px 0;
+ }
+.container .form form .forget-pass a{
+   font-size: 15px;
+}
+ 
+ .wel-para{
+  color: #5e3d3d;
+  font-size: 17px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: capitalize;
+  
+  margin-top: -70px;padding-left: 6em;
+ }
+ 
+  .login-img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+    transition: all 0.2s;
+  }
+  
+  a:hover,
+  a:focus {
+    color: #111110;
+    transition: all 0.2s;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  .login-card {
+    padding: 32px 32px 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    max-height: 740px;
+    max-width: 350px;
+    flex-direction: column;
+  }
+  
+  .login-card-content {
+    flex-grow: 2;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-card-footer {
+    padding: 32px 0;
+  }
+  
+  h2 .highlight {
+    color: #fdc654;
+  }
+  
+  h2 {
+    font-size: 32px;
+    margin: 0;
+  }
+  
+  h3 {
+    color: #f7a6ad;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+  }
+  
+  .header {
+    margin-bottom: 50px;
+  }
+  
+  .logo {
+    border-radius: 40px;
+    width: 200px;
+    height: 200px;
+    /* display: flex;
+    justify-content: center; */
+    /* margin: 0 auto 16px; */
+    background-image: url(rathna.png);
+    background-size: cover;
+    object-fit: cover;
+    margin-left: 40px;
+    /* align-items: center; */
+  }
+  
+  button {
+    /* background-image: linear-gradient( 117deg,  rgba(123,216,96,1) 39.2%, rgba(255,255,255,1) 156.2% ); */
+    /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(235,131,130,1) 0%, rgba(235,131,130,0.75) 38.6%, rgba(167, 56, 9, 0.52) 72.1%, rgba(211,177,125,0.24) 94.7% ); */
+    display: block;
+    background-image: linear-gradient( 109.6deg,  rgba(83,5,5,1) 11.2%, rgba(0,0,0,1) 91.1% );
+    color: #ffffff;
+    width: 100%;
+    border: none;
+    border-radius: 40px;
+    padding: 12px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 32px;
+    outline: none;
+  }
+  
+  .form-field {
+    margin-bottom: 16px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .form-field .icon {
+    position: absolute;
+    background: white;
+    color: #d61e2d;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    border-radius: 20px;
+  }
+  
+  .form-field .icon:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-left: 12px solid white;
+    position: absolute;
+    top: 8px;
+    right: -20px;
+  }
+  
+  .form-field input {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 100%;
+    border-radius: 16px;
+    height: 36px;
+    background: rgba(242, 38, 38, 0.1);
+    color: rgb(12, 12, 12);
+    outline: none;
+    transition: all 0.2s;
+  }
+  
+  .form-field input::placeholder {
+    color: rgb(14, 14, 14);
+  }
+  
+  .form-field input:hover,
+  .form-field input:focus {
+    background: white;
+    color: #d61e2d;
+    transition: all 0.2s;
+  }
+  .form-field input::placeholder{
+    letter-spacing: 1px;
+    
+  }
+  
+  .form-field input:hover::placeholder {
+    color: #000000b8;
+    letter-spacing: 2px;
+  }
+  .forget-link{
+    color: rgb(11, 11, 11);
+    margin-top: -90px !important;position: relative;top: -20px;text-decoration: underline;
+    letter-spacing: 1px;
+    
+  }
+  .box{
+    background: black;
+   margin-left: 15%;
+   margin-top: 30px;
+   padding: 2em 2em;
+   text-align: center;
+   color: #ffffff;
+   font-size: 15px;
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   letter-spacing: 1px;
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  }
+.box span{
+  padding-right: 150px;
+}
+ 
+/* Add this CSS in your styles1.css or your preferred stylesheet */
+
+#passwordResetModal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+#passwordResetModal button {
+  margin-right: 10px;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
