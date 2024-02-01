@@ -342,83 +342,107 @@ if(!isset($_SESSION["email"])){
             <div class="row">
                 <div class="col-lg-12">
                     <div class="report-header"> 
-                        <h1 class="recent-Articles">Recent News</h1> 
-                        <button class="view">View All</button> 
+                        <h1 class="recent-Articles">outlet user</h1> 
                     </div> 
         
                     <div class="report-body"> 
                         <div class="report-topic-heading"> 
-                            <h3 class="t-op">Article</h3> 
-                            <h3 class="t-op">Views</h3> 
-                            <h3 class="t-op">Comments</h3> 
-                            <h3 class="t-op">Status</h3> 
+                            <h3 class="t-op">Employee Name</h3> 
+                            <h3 class="t-op">outlet</h3> 
+                            <h3 class="t-op">mail id</h3> 
+                            <h3 class="t-op">password</h3> 
                         </div> 
         
                         <div class="items"> 
-                            <div class="item1"> 
-                                <h3 class="t-op-nextlvl">Article 73</h3> 
-                                <h3 class="t-op-nextlvl">2.9k</h3> 
-                                <h3 class="t-op-nextlvl">210</h3> 
-                                <h3 class="t-op-nextlvl label-tag">Published</h3> 
-                            </div> 
-        
-                            <div class="item1"> 
-                                <h3 class="t-op-nextlvl">Article 72</h3> 
-                                <h3 class="t-op-nextlvl">1.5k</h3> 
-                                <h3 class="t-op-nextlvl">360</h3> 
-                                <h3 class="t-op-nextlvl label-tag">Published</h3> 
-                            </div> 
-        
-                            <div class="item1"> 
-                                <h3 class="t-op-nextlvl">Article 71</h3> 
-                                <h3 class="t-op-nextlvl">1.1k</h3> 
-                                <h3 class="t-op-nextlvl">150</h3> 
-                                <h3 class="t-op-nextlvl label-tag">Published</h3> 
-                            </div> 
-        
-                            <div class="item1"> 
-                                <h3 class="t-op-nextlvl">Article 70</h3> 
-                                <h3 class="t-op-nextlvl">1.2k</h3> 
-                                <h3 class="t-op-nextlvl">420</h3> 
-                                <h3 class="t-op-nextlvl label-tag">Published</h3> 
-                            </div> 
-        
-                            <div class="item1"> 
-                                <h3 class="t-op-nextlvl">Article 69</h3> 
-                                <h3 class="t-op-nextlvl">2.6k</h3> 
-                                <h3 class="t-op-nextlvl">190</h3> 
-                                <h3 class="t-op-nextlvl label-tag">Published</h3> 
-                            </div> 
-        
-                            <div class="item1"> 
-                                <h3 class="t-op-nextlvl">Article 68</h3> 
-                                <h3 class="t-op-nextlvl">1.9k</h3> 
-                                <h3 class="t-op-nextlvl">390</h3> 
-                                <h3 class="t-op-nextlvl label-tag">Published</h3> 
-                            </div> 
-        
-                            <div class="item1"> 
-                                <h3 class="t-op-nextlvl">Article 67</h3> 
-                                <h3 class="t-op-nextlvl">1.2k</h3> 
-                                <h3 class="t-op-nextlvl">580</h3> 
-                                <h3 class="t-op-nextlvl label-tag">Published</h3> 
-                            </div> 
-        
-                            <div class="item1"> 
-                                <h3 class="t-op-nextlvl">Article 66</h3> 
-                                <h3 class="t-op-nextlvl">3.6k</h3> 
-                                <h3 class="t-op-nextlvl">160</h3> 
-                                <h3 class="t-op-nextlvl label-tag">Published</h3> 
-                            </div> 
-        
-                            <div class="item1"> 
-                                <h3 class="t-op-nextlvl">Article 65</h3> 
-                                <h3 class="t-op-nextlvl">1.3k</h3> 
-                                <h3 class="t-op-nextlvl">220</h3> 
-                                <h3 class="t-op-nextlvl label-tag">Published</h3> 
-                            </div> 
-        
-                        </div> 
+                          
+                        <?php
+                        require_once 'db.php';
+
+                        function sanitize($input) {
+                            return $input;
+                        }
+
+                        // Check if the form is submitted for updates
+                        if (isset($_POST['update'])) {
+                            // Loop through posted data and update the database
+                            foreach ($_POST['employee'] as $id => $employeeData) {
+                                $id = sanitize($id);
+                                $name = sanitize($employeeData['name']);
+                                $password = sanitize($employeeData['password']);
+                                $department = sanitize($employeeData['department']);
+                                $email = sanitize($employeeData['email']);
+
+                                // Update the database based on your table structure
+                                $updateSql = "UPDATE adminlogin SET name='$name', password='$password', department='$department', email='$email' WHERE id=$id";
+                                $conn->query($updateSql);
+                            }
+
+                            echo "Data updated successfully!";
+                        }
+
+                        // Fetch employee details from the database
+                        $sql = "SELECT id, name, password, department ,email FROM adminlogin";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                ?>
+                                <div class="items" style="border: 1px solid #3498db; background-color: #ecf0f1; padding: 10px; margin-bottom: 10px;">
+                                    <div class="item1">
+                                        <form method="post">
+                                            <h3 class="t-op-nextlvl" style="color: #2c3e50;">Name:
+                                                <span class="editable" contenteditable="false"><?php echo $row['name']; ?></span>
+                                                <input type="hidden" name="employee[<?php echo $row['id']; ?>][name]" value="<?php echo $row['name']; ?>">
+                                            </h3>
+                                            <h3 class="t-op-nextlvl" style="color: #2c3e50;">Password:
+                                                <span class="editable" contenteditable="false"><?php echo $row['password']; ?></span>
+                                                <input type="hidden" name="employee[<?php echo $row['id']; ?>][password]" value="<?php echo $row['password']; ?>">
+                                            </h3>
+                                            <h3 class="t-op-nextlvl" style="color: #2c3e50;">Department:
+                                                <span class="editable" contenteditable="false"><?php echo $row['department']; ?></span>
+                                                <input type="hidden" name="employee[<?php echo $row['id']; ?>][department]" value="<?php echo $row['department']; ?>">
+                                            </h3>
+                                            <h3 class="t-op-nextlvl" style="color: #2c3e50;">email:
+                                                <span class="editable" contenteditable="false"><?php echo $row['email']; ?></span>
+                                                <input type="hidden" name="employee[<?php echo $row['id']; ?>][email]" value="<?php echo $row['email']; ?>">
+                                            </h3>
+                                            <button type="button" class="edit-btn" onclick="toggleEditableFields(this)" style="background-color: #e67e22; color: #fff;">Edit</button>
+                                            <button type="submit" name="update" class="update-btn" style="background-color: #27ae60; color: #fff; display: none;">Update</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+
+                        // Close database connection
+                        $conn->close();
+                        ?>
+
+                            <script>
+                                // Add JavaScript to handle the edit button click event
+                                function toggleEditableFields(button) {
+                                    var form = button.closest('form');
+                                    var editableFields = form.querySelectorAll('.editable');
+                                    editableFields.forEach(function (field) {
+                                        field.contentEditable = 'true';
+                                        field.addEventListener('input', function () {
+                                            // Update the corresponding hidden input value when the content changes
+                                            var hiddenInput = field.nextElementSibling;
+                                            hiddenInput.value = field.textContent.trim();
+                                        });
+                                    });
+
+                                    button.style.display = 'none';
+                                    form.querySelector('.update-btn').style.display = 'inline-block';
+                                }
+                            </script>
+
+
+
+
                     </div> 
                 </div>
             </div>
