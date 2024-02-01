@@ -44,7 +44,11 @@ if(!isset($_SESSION["email"])){
     <div class="admin-panel">
         <h1>Welcome to Admin Panel</h1>
         <div class="admin-content">
-            <!-- Add your admin panel content here -->
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="file">Choose Excel File:</label>
+            <input type="file" name="file" id="file" accept=".xlsx, .xls">
+            <button type="submit" name="submit">Upload</button>
+       </form>
         </div>
     </div>
 </body>
