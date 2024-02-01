@@ -56,38 +56,46 @@
                             <button type="button" id="loginButton">Login</button>
                             <!-- Add Forget Password link -->
                             <a class="forget-link" href="forget_password_hompage.php">Forget Password</a>
-                        </form>
+                          </form>
+                          <script>
+                              $(document).ready(function () {
+                                  $('#password').keypress(function (e) {
+                                      if (e.which === 13) { // Check if Enter key is pressed
+                                          loginUser();
+                                      }
+                                  });
 
-                        <!-- Your existing JavaScript code -->
+                                  $('#loginButton').on('click', function () {
+                                      loginUser();
+                                  });
 
-                        <script>
-                            $(document).ready(function () {
-                                $('#loginButton').on('click', function () {
-                                    var email = $('#email').val();
-                                    var password = $('#password').val();
+                                  function loginUser() {
+                                      var email = $('#email').val();
+                                      var password = $('#password').val();
 
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: 'login_verification.php', // Change this to your PHP file
-                                        data: { email: email, password: password },
-                                        dataType: 'json',
-                                        success: function (response) {
-                                            if (response.success) {
-                                                alert('Login successful!');
-                                                window.location.href = response.redirect;
-                                            } else {
-                                                alert('Login failed. Please check your credentials.');
-                                                console.error(response.errors);
-                                            }
-                                        },
-                                        error: function (xhr, status, error) {
-                                            console.error('Error:', xhr.responseText);
-                                            alert('Error: Unable to login. Check the console for details.');
-                                        }
-                                    });
-                                });
-                            });
-                        </script>
+                                      $.ajax({
+                                          type: 'POST',
+                                          url: 'login_verification.php', // Change this to your PHP file
+                                          data: { email: email, password: password },
+                                          dataType: 'json',
+                                          success: function (response) {
+                                              if (response.success) {
+                                                  alert('Login successful!');
+                                                  window.location.href = response.redirect;
+                                              } else {
+                                                  alert('Login failed. Please check your credentials.');
+                                                  console.error(response.errors);
+                                              }
+                                          },
+                                          error: function (xhr, status, error) {
+                                              console.error('Error:', xhr.responseText);
+                                              alert('Error: Unable to login. Check the console for details.');
+                                          }
+                                      });
+                                  }
+                              });
+                          </script>
+
 
                 
                             
