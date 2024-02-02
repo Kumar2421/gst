@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="adminpanel.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+      <script src="adminpanel.js" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container ">
+            <div class="row logosection   ">
+                <div class="col-lg-2  col-2">
+                    <div class="logo-card">
+                        <img src="media/rathna.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-1 col-3"></div>
+                <div class="col-lg-1 col-4 ">
+                    <!-- <div class="hamburger ">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div> -->
+                    <div id="menu-container">
+                        <div id="menu-wrapper">
+                           <div id="hamburger-menu"><span></span><span></span><span></span></div>
+                           <!-- hamburger-menu -->
+                        </div>
+                        <!-- menu-wrapper -->
+                        <ul class="menu-list accordion">
+                           <li id="nav1" class="toggle accordion-toggle"> 
+                              <span class="icon-plus"></span>
+                              <a class="menu-link" href="#">Menu1</a>
+                           </li>
+                           <!-- accordion-toggle -->
+                           <ul class="menu-submenu accordion-content">
+                              <li><a class="head" href="#">Submenu1</a></li>
+                              <li><a class="head" href="#">Submenu2</a></li>
+                              <li><a class="head" href="#">Submenu3</a></li>
+                           </ul>
+                           <!-- menu-submenu accordon-content-->
+                           <li id="nav2" class="toggle accordion-toggle"> 
+                              <span class="icon-plus"></span>
+                              <a class="menu-link" href="#">Menu2</a>
+                           </li>
+                           <!-- accordion-toggle -->
+                           <ul class="menu-submenu accordion-content">
+                              <li><a class="head" href="#">Submenu1</a></li>
+                              <li><a class="head" href="#">Submenu2</a></li>
+                           </ul>
+                           <!-- menu-submenu accordon-content-->
+                                <li id="nav3" class="toggle accordion-toggle"> 
+                              <span class="icon-plus"></span>
+                              <a class="menu-link" href="#">Menu3</a>
+                           </li>
+                           <!-- accordion-toggle -->
+                           <ul class="menu-submenu accordion-content">
+                              <li><a class="head" href="#">Submenu1</a></li>
+                              <li><a class="head" href="#">Submenu2</a></li>
+                              <li><a class="head" href="#">Submenu3</a></li>
+                              <li><a class="head" href="#">Submenu4</a></li>
+                           </ul>
+                           <!-- menu-submenu accordon-content-->
+                        </ul>
+                        <!-- menu-list accordion-->
+                     </div>
+                     <!-- menu-container -->
+                </div>
+                <div class="col-lg-1 col-1"></div>
+                <div class="col-lg-3 ">
+                    <div class="searchbar">
+                        <div class="input-group mb-3 ">
+                            <input class="form-control mt-3 " id="searchInput" type="text" placeholder="Search" aria-label="Search" id="searchInput">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text mt-3" onclick="handleSearch()"><i class="fa-brands fa-searchengin fa-xl" style="color: #c6cfd8;"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-1"></div>
+                <div class="col-lg-1">
+                    <div class="notification-icon">
+                        <i class="fa-solid fa-bell fa-xl" style="color: rgb(0, 0, 0);"></i>
+                        <span class="notification-badge"></span>
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <div class="profile-head">
+                        <img src="media/3.jpg"  alt="Profile Image" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="siderbar-section" >
+        <div class="container-xxl" id="#myDIV">
+            <div class="row-side-bar m-2">
+                <a href="admin/dasboard.php">
+                 <div class="side-option-1 p-2 " id="myElement">
+                    <i class="fas fa-tachometer-alt" style="color: #e0dce7;font-size: 2em;"></i>
+                 <a href="admin/dasboard"><h5 class="side-head-1">DashBoard</h5></a>
+                   </div>
+                </a>
+               <a href="">
+                <div class="side-option-1 p-2 ">
+                    <i class="fas fa-file-invoice" style="color: #c8c4cf;font-size: 2em;"></i>
+                   <h5 class="side-head-1">Invoices</h5>
+                   </div>
+               </a>
+               <a href="">
+                <div class="side-option-1 p-2 ">
+                    <i class="fas fa-file-alt" style="color: #e6dcf5;font-size: 2em;"></i>
+                   <h5 class="side-head-1">GST Returns</h5>
+                   </div>
+               </a>
+               <a href="">
+                <div class="side-option-1 p-2 ">
+                    <i class="fas fa-users" style="color: #d5cfdd;font-size: 2em;"></i>
+                   <h5 class="side-head-1">customer management</h5>
+                   </div>
+               </a>
+               <a href="">
+                <div class="side-option-1 p-2 ">
+                    <i class="fas fa-cogs" style="color: #e4dbf1;font-size: 2em;"></i>
+                   <h5 class="side-head-1">service management</h5>
+                   </div>
+               </a>
+               <a href="#">
+                <div class="side-option-1 p-2 ">
+                    <i class="fas fa-calculator" style="color: #e9e5f0;font-size: 2em;"></i>
+                   <h5 class="side-head-1" style="padding-left: 20px;">tax calculation</h5>
+                   </div>
+               </a>
+               <a href="#">
+                <div class="side-option-1 p-2 ">
+                    <i class="fas fa-chart-bar" style="color: #ebe9f0;font-size: 2em;"></i>
+                   <h5 class="side-head-1" style="padding-left: 20px;">Reports</h5>
+                   </div>
+               </a>
+               <a href="#">
+                <div class="side-option-1 p-2 ">
+                    <i class="fas fa-bell" style="color: #e3deeb;font-size: 2em;"></i>
+                   <h5 class="side-head-1" style="padding-left: 20px;">notifications</h5>
+                   </div>
+               </a>
+               <div class="side-dropdown">
+                <a href=""> 
+                  <li class='sub-menu'><i class="fa-solid fa-gear" style="color: #e6e3fa;font-size: 2em;margin-left: -10px;"></i><a class="settings-text" href='#settings'>Settings<div class='fa fa-caret-down right'></div></a>
+                      <ul>
+                          <li><a href='#settings'>Account</a></li>
+                          <li><a href='#settings'>Profile</a></li>
+                          <li><a href='#settings'>Password</a></li>
+                          <li><a href='#settings'>Notification</a></li>
+                      </ul>
+                  </li>
+               </a>
+             </div>
+               <a href="#">
+                <div class="side-option-1 p-2 ">
+                    <i class="fa-solid fa-right-from-bracket " style="color: #b5b7ce;font-size: 1.5em;padding-top: 10px;"></i>
+                   <h5 class="side-head-1" style="padding-left: 20px;">help</h5>
+                   </div>
+               </a>
+               <a href="#">
+                <div class="side-option-1 p-2 ">
+                    <i class="fa-solid fa-right-from-bracket " style="color: #e5e5ee;font-size: 1.5em;padding-top: 10px;"></i>
+                   <!-- <h5 class="side-head-1" type="button" data-toggle="modal" data-target="#myModal" style="padding-left: 20px;">logout</h5> -->
+                   <button class=" btn side-head-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">LogOut</button>
+
+                   <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                     <div class="offcanvas-header">
+                       <h5 class="offcanvas-title" id="offcanvasScrollingLabel" style="margin-top: 5em;">LOGOUT <br>CONFIRMATION!</h5>
+                       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                     </div>
+                     <div class="offcanvas-body">
+                       <p class="confirm-para">Do you wish to log out of the OpenID provider?</p>
+                       <div class="btn logout mt-2" >yes! logout</div>
+                      <button class="btn close-btn mt-2"  data-bs-dismiss="offcanvas" >Close</button>
+                     </div>
+                   </div>
+                </div>
+               </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</body>
+</html>

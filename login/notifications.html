@@ -1,0 +1,318 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+      
+     
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      
+      
+</head>
+<body>
+    <style>
+        ::-webkit-scrollbar{
+    width: 5px;
+    height: 1px;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-track{
+    background-color: #ececec;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color: #fffdfd;
+    -webkit-border-radius: 10px;
+    border-radius: 70px;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(38,51,97,1) 0%, rgba(65,143,222,1) 79% );
+  }
+
+body {
+  margin:20px;
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  color: #2B3E44;
+  letter-spacing: .05em;
+  line-height: 1.5em;
+}
+
+h2 {
+  font-family: 'Copse', serif;
+  text-align: center;
+  font-size: 24px;
+  color: #6C7071;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: inline-block;
+  background-color: #FFFFFF;
+  position: relative;
+  margin: 0;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%,0);
+  z-index: 5;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+p {
+  margin: 0px;
+}
+
+a {
+  color: #3A606C;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.divider {
+  content: '';
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 1px;
+  margin: 30px 0;
+  background: #aab2b4;
+}
+
+.wrapper {
+  width: 82%;
+  margin: 0 auto;
+  float: right;
+}
+
+.note-box {
+	background-color: #FFFDDC;
+	border-radius: 8px;
+  padding: 20px;
+	margin-bottom: 20px;
+	font-size: 18px;
+	letter-spacing: .03em;
+  font-style: italic;
+}
+
+.notifications-box {
+  background-color: #EFF3F5;
+  border-radius: 8px;
+  padding: 60px 40px 40px;
+}
+
+.notification-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%; 
+}
+
+.notification-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.notification-column-left {
+  flex-basis: 90%;
+}
+
+.notification-column-right {
+  flex-basis: 10%;
+}
+
+.checkbox {
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 34px;
+  border-radius: 20px;
+  border: 2px solid #2B3E44;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: all 0.3s ease 0s;
+}
+
+  .checkbox:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px;
+  }
+
+  .checkbox:hover {
+    transform: scale(1.2);
+  }
+  
+  @keyframes shadow-pulse {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .checkbox-clicked {
+    background-color: #2B3E44;
+    animation: shadow-pulse 1s 1;
+  }
+  
+.hidden {
+  display: none;
+}
+
+.more-box {
+  text-align: center;
+}
+
+.more {
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.less {
+  display: none;
+}
+
+  .more .number {
+    font-weight: 700;
+  }
+
+.big-btn {
+  display: inline-block;
+  border: solid 3px #2b3e44;
+  background: #2b3e44;
+  color: white;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+    </style>
+    <div class="wrapper" >
+        <div class="note-box">
+            Note: Click the close button associated with the second notification to trigger the animation. The animation will only work once. Click <a href="#" class="refresh">here</a> to refresh the pen.
+        </div>
+        
+      <h2>Latest Notifications</h2>
+      
+        <div class="notifications-box">
+          <!-- #1 -->
+          <div class="notification-block">
+            <div class="notification-row">
+              <div class="notification-column notification-column-left">
+              <p>Don't forget you and your guests <span class="italic">Dustin B.</span> and <span class="italic">Kate W.</span> have a reservation at the <span class="bold">Poseidon's Dining Room</span> on <span class="bold">Sunday, November 10 at 6:30 pm</span>.</p>
+              </div>
+            
+            <div class="notification-column notification-column-right">
+              <div class="checkbox"></div>
+            </div>
+            </div>
+            
+            <div class="divider"></div>
+          </div>
+    
+        <!-- #2 -->
+        <div class="notification-block notification-block-destroy">
+            <div class="notification-row">
+              <div class="notification-column notification-column-left">
+              <p>EVENT CANCELLATION: The "<a href="#">North Carolina Symphony Classical Series: The Firebird</a>" event on <span class="bold">Saturday, November 9 at 8 pm</span> has been cancelled. Please contact your event coordinator if you have any questions.</p>
+              </div>
+            
+            <div class="notification-column notification-column-right">
+              <div class="checkbox checkbox-active"></div>
+            </div>
+            </div>
+    
+          <div class="divider"></div>
+        </div>
+    
+        <!-- #3 -->
+        <div class="notification-block">
+            <div class="notification-row">
+              <div class="notification-column notification-column-left">
+              <p>Your transportation request (<a href="#">ticket #17984</a>) has been completed. Please contact us if you have any questions.</p>
+              </div>
+            
+            <div class="notification-column notification-column-right">
+              <div class="checkbox"></div>
+            </div>
+            </div>
+    
+          <div class="divider"></div>
+        </div>
+        
+        <!-- #4 -->
+        <div class="notification-block hidden">
+            <div class="notification-row">
+              <div class="notification-column notification-column-left">
+              <p>EVENT UPDATE: The "<a href="#">Check out our Brand New Atlantis Center Renderings</a>" event originally scheduled for <span class="bold">Saturday, November 9 at 8 pm</span> has been rescheduled for <span class="bold">Saturday, November 9 at 8:30 pm</span>.</p>
+              </div>
+            
+            <div class="notification-column notification-column-right">
+              <div class="checkbox"></div>
+            </div>
+            </div>
+    
+          <div class="divider"></div>
+        </div>
+        
+        <div class="more-box">
+          <p class="more">You have <span class="number">2</span> more unread notification<span class="s">s</span></p>
+          <a class="big-btn" href="#">View All Notifications</a>
+        </div>
+        </div>
+    </div>
+    <script>
+        $(".checkbox-active").click(function() {
+  // Checkbox click animation
+  $(this).addClass('checkbox-clicked');
+  // Fade out and slide up dismissed notification
+  $(".notification-block-destroy").delay(300).animate({height:'toggle',opacity:'toggle'},'slow',function() {
+    // Fade in and slide down new notification
+    $(".hidden").animate({height:'toggle',opacity:'toggle'},'slow',function() {
+      $(".number").text('1');
+      $(".s").text('');
+    });
+  });
+
+	return false;
+});
+
+// Refresh page
+$(".refresh").on("click", function() {
+    history.go(0);
+});
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</body>
